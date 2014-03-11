@@ -1,0 +1,32 @@
+{
+  "name": "is-type-of",
+  "version": "0.0.0",
+  "description": "complete type checking for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dead-horse/is-type-of.git"
+  },
+  "files": ["index.js"],
+  "keywords": [
+    "typeof",
+    "checker",
+    "type",
+    "is"
+  ],
+  "author": "dead_horse <dead_horse@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dead-horse/is-type-of/issues"
+  },
+  "homepage": "https://github.com/dead-horse/is-type-of",
+  "devDependencies": {
+    "autod": "^0.1.1"
+  },
+  "dependencies": {
+    "core-util-is": "1.0.1"
+  }
+}
