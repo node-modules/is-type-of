@@ -33,3 +33,18 @@ exports.generatorFunction = function (obj) {
 exports.promise = function (obj) {
   return obj && 'function' == typeof obj.then;
 };
+
+var MAX_INT_31 = Math.pow(2, 31);
+
+exports.int = function (obj) {
+  return utils.isNumber(obj) && obj % 1 === 0;
+};
+
+exports.long = function (obj) {
+  return exports.int(obj) && (obj >= MAX_INT_31 || obj < -MAX_INT_31);
+};
+
+exports.double = function (obj) {
+  return utils.isNumber(obj) && !isNaN(obj) && obj % 1 !== 0;
+};
+
