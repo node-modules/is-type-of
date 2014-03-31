@@ -40,6 +40,10 @@ exports.int = function (obj) {
   return utils.isNumber(obj) && obj % 1 === 0;
 };
 
+exports.int32 = function (obj) {
+  return exports.int(obj) && (obj < MAX_INT_31 && obj >= -MAX_INT_31);
+};
+
 exports.long = function (obj) {
   return exports.int(obj) && (obj >= MAX_INT_31 || obj < -MAX_INT_31);
 };

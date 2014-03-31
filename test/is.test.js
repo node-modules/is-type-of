@@ -90,6 +90,29 @@ describe('is', function () {
     });
   });
 
+  describe('int32', function () {
+    it('should true', function () {
+      is.int32(0).should.equal(true);
+      is.int32(-100).should.equal(true);
+      is.int32(100).should.equal(true);
+      is.int32(Math.pow(2, 31) - 1).should.equal(true);
+      is.int32(-Math.pow(2, 31)).should.equal(true);
+    });
+
+    it('should false', function () {
+      is.int32(Math.pow(2, 31)).should.equal(false);
+      is.int32(Math.pow(2, 50)).should.equal(false);
+      is.int32(-Math.pow(2, 31) - 1).should.equal(false);
+      is.int32(-Math.pow(2, 50)).should.equal(false);
+      is.int32(-Math.pow(2, 63)).should.equal(false);
+      is.int32(0.1).should.equal(false);
+      is.int32(-0.1).should.equal(false);
+      is.int32(-111110.1).should.equal(false);
+      is.int32(11110.12312321).should.equal(false);
+      is.int32('1.1').should.equal(false);
+    });
+  });
+
   describe('long', function () {
     it('should true', function () {
       is.long(Math.pow(2, 31)).should.equal(true);

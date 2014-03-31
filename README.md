@@ -68,6 +68,8 @@ is.double(0); // => false
 
 #### is.double(double)
 
+#### is.int32(int)
+
 #### is.long(long)
 
 ## License
