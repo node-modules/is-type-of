@@ -14,6 +14,29 @@ var is = require('..');
 var should = require('should');
 
 describe('is', function () {
+  describe('NaN', function () {
+    it('should true', function () {
+      is.NaN(NaN);
+      is.NaN(Number.NaN);
+      is.NaN(0 / 0)
+    });
+
+    it('should false', function () {
+      is.NaN(undefined);
+      is.NaN({});
+
+      is.NaN(true);
+      is.NaN(null);
+      is.NaN(37);
+
+      is.NaN("37");
+      is.NaN("37.37");
+      is.NaN("");
+      is.NaN(" ");
+      is.NaN("NaN");
+      is.NaN("blabla");
+    });
+  });
   describe('generator', function () {
     it('should true', function () {
       var gen = function *() {

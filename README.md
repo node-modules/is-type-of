@@ -58,6 +58,8 @@ is.double(0); // => false
 
 ### Extend API
 
+#### is.NaN(NaN)
+
 #### is.generator(gen)
 
 #### is.generatorFunction(fn)

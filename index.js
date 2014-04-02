@@ -22,16 +22,20 @@ Object.keys(utils).forEach(function(m) {
   exports[name] = utils[m];
 });
 
+exports.NaN = function (obj) {
+  return Number.isNaN(obj);
+};
+
 exports.generator = function (obj) {
-  return obj && 'function' == typeof obj.next && 'function' == typeof obj.throw;
+  return obj && 'function' === typeof obj.next && 'function' === typeof obj.throw;
 };
 
 exports.generatorFunction = function (obj) {
-   return obj && obj.constructor && 'GeneratorFunction' == obj.constructor.name;
+  return obj && obj.constructor && 'GeneratorFunction' === obj.constructor.name;
 };
 
 exports.promise = function (obj) {
-  return obj && 'function' == typeof obj.then;
+  return obj && 'function' === typeof obj.then;
 };
 
 var MAX_INT_31 = Math.pow(2, 31);
