@@ -1,4 +1,11 @@
 
+0.2.0 / 2014-04-07
+==================
+
+  * add readme for isstream
+  * add isStream
+  * add travis-yml
+
 0.1.0 / 2014-04-03
 ==================
 
