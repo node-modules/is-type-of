@@ -3,6 +3,11 @@ is-type-of
 
 complete type checking for node, extend [core-util-is](https://github.com/isaacs/core-util-is)
 
+dependencies:
+
+- [core-util-is](https://github.com/isaacs/core-util-is)
+- [is-stream](https://github.com/rvagg/isstream)
+
 ## Install
 
 ```
@@ -55,6 +60,16 @@ is.double(0); // => false
 #### is.primitive(prim)
 
 #### is.buffer(buf)
+
+### from [is-stream](https://github.com/rvagg/isstream)
+
+#### is.stream(stream)
+
+#### is.readableStream(readable)
+
+#### is.writableStream(writable)
+
+#### is.duplexStream(duplex)
 
 ### Extend API
 
