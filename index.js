@@ -11,16 +11,28 @@
  */
 
 var utils = require('core-util-is');
+var isStearm = require('isstream');
 
 /**
  * Expose all methods in core-util-is
  */
 
-Object.keys(utils).forEach(function(m) {
-  var name = m.slice(2);
-  name = name[0].toLowerCase() + name.slice(1);
-  exports[name] = utils[m];
+Object.keys(utils).map(function (name) {
+  exports[transform(name)] = utils[name];
 });
+
+/**
+ * Stream detected by isstream
+ */
+
+exports.stream = isStearm;
+exports.readableStream = isStearm.isReadable;
+exports.writableStream = isStearm.isWritable;
+exports.duplexStream = isStearm.isDuplex;
+
+/**
+ * Extend method
+ */
 
 exports.NaN = function (obj) {
   return Number.isNaN(obj);
@@ -56,3 +68,14 @@ exports.double = function (obj) {
   return utils.isNumber(obj) && !isNaN(obj) && obj % 1 !== 0;
 };
 
+/**
+ * transform isNull type to null
+ * @param {[type]} m [description]
+ * @return {[type]} [description]
+ */
+
+function transform(m) {
+  var name = m.slice(2);
+  name = name[0].toLowerCase() + name.slice(1);
+  return name;
+}
