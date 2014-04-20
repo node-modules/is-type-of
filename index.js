@@ -39,33 +39,44 @@ exports.NaN = function (obj) {
 };
 
 exports.generator = function (obj) {
-  return obj && 'function' === typeof obj.next && 'function' === typeof obj.throw;
+  return obj
+    && 'function' === typeof obj.next
+    && 'function' === typeof obj.throw;
 };
 
 exports.generatorFunction = function (obj) {
-  return obj && obj.constructor && 'GeneratorFunction' === obj.constructor.name;
+  return obj
+    && obj.constructor
+    && 'GeneratorFunction' === obj.constructor.name;
 };
 
 exports.promise = function (obj) {
-  return obj && 'function' === typeof obj.then;
+  return obj
+    && 'function' === typeof obj.then;
 };
 
 var MAX_INT_31 = Math.pow(2, 31);
 
 exports.int = function (obj) {
-  return utils.isNumber(obj) && obj % 1 === 0;
+  return utils.isNumber(obj)
+    && obj % 1 === 0;
 };
 
 exports.int32 = function (obj) {
-  return exports.int(obj) && (obj < MAX_INT_31 && obj >= -MAX_INT_31);
+  return exports.int(obj)
+    && obj < MAX_INT_31
+    && obj >= -MAX_INT_31;
 };
 
 exports.long = function (obj) {
-  return exports.int(obj) && (obj >= MAX_INT_31 || obj < -MAX_INT_31);
+  return exports.int(obj)
+    && (obj >= MAX_INT_31 || obj < -MAX_INT_31);
 };
 
 exports.double = function (obj) {
-  return utils.isNumber(obj) && !isNaN(obj) && obj % 1 !== 0;
+  return utils.isNumber(obj)
+    && !isNaN(obj)
+    && obj % 1 !== 0;
 };
 
 /**
