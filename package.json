@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/dead-horse/is-type-of.git"
+    "url": "git://github.com/node-modules/is-type-of.git"
   },
   "files": ["index.js"],
   "keywords": [
@@ -20,14 +20,16 @@
   "author": "dead_horse <dead_horse@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dead-horse/is-type-of/issues"
+    "url": "https://github.com/node-modules/is-type-of/issues"
   },
-  "homepage": "https://github.com/dead-horse/is-type-of",
+  "homepage": "https://github.com/node-modules/is-type-of",
   "devDependencies": {
     "autod": "^0.1.1",
-    "istanbul": "git://github.com/gotwarlost/istanbul.git#harmony",
+    "contributors": "*",
+    "istanbul-harmony": "*",
+    "long": "1.1.2",
     "mocha": "^1.17.1",
-    "should": "3.2.0"
+    "should": "3.3.1"
   },
   "dependencies": {
     "core-util-is": "1.0.1",
