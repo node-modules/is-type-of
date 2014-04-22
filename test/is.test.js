@@ -12,6 +12,7 @@
 
 var is = require('..');
 var should = require('should');
+var Long = require('long');
 
 describe('is', function () {
   describe('NaN', function () {
@@ -143,6 +144,8 @@ describe('is', function () {
       is.long(-Math.pow(2, 31) - 1).should.equal(true);
       is.long(-Math.pow(2, 50)).should.equal(true);
       is.long(-Math.pow(2, 63)).should.equal(true);
+      is.long(Long.fromNumber(Math.pow(2, 31))).should.equal(true);
+      is.long(Long.fromString('1024102410241024')).should.equal(true);
     });
 
     it('should false', function () {

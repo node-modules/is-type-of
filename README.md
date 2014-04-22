@@ -89,6 +89,8 @@ is.double(0); // => false
 
 #### is.long(long)
 
+* Support [Long](https://github.com/dcodeIO/Long.js) instance.
+
 ## License
 
 MIT
