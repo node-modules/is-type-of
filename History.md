@@ -1,4 +1,12 @@
 
+n.n.n / 2014-04-22 
+==================
+
+  * bump deps version
+  * Merge pull request #1 from node-modules/support-long-module
+  * is.long() support long module
+  * refactor
+
 0.2.0 / 2014-04-07
 ==================
 
