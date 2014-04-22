@@ -32,7 +32,7 @@
     "should": "3.3.1"
   },
   "dependencies": {
-    "core-util-is": "1.0.1",
-    "isstream": "0.1.0"
+    "core-util-is": "^1.0.1",
+    "isstream": "^0.1.0"
   }
 }
