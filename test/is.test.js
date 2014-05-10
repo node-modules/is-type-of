@@ -144,8 +144,6 @@ describe('is', function () {
       is.long(-Math.pow(2, 31) - 1).should.equal(true);
       is.long(-Math.pow(2, 50)).should.equal(true);
       is.long(-Math.pow(2, 63)).should.equal(true);
-      is.long(Long.fromNumber(Math.pow(2, 31))).should.equal(true);
-      is.long(Long.fromString('1024102410241024')).should.equal(true);
     });
 
     it('should false', function () {
@@ -161,6 +159,17 @@ describe('is', function () {
       is.long(-Math.pow(2, 31)).should.equal(false);
     });
   });
+
+  describe('Long', function () {
+    it('should true', function () {
+      is.Long(Long.fromNumber(Math.pow(2, 31))).should.equal(true);
+      is.Long(Long.fromString('1024102410241024')).should.equal(true);
+    });
+
+    it('should false', function () {
+      is.Long(123).should.equal(false);
+    });
+  })
 
   describe('double', function () {
     it('should true', function () {

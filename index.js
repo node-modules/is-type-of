@@ -69,13 +69,14 @@ exports.int32 = function (obj) {
 };
 
 exports.long = function (obj) {
-  if (typeof obj === 'object' && typeof obj.high === 'number' && typeof obj.low === 'number') {
-    // support `long` module
-    return true;
-  }
-
   return exports.int(obj)
     && (obj >= MAX_INT_31 || obj < -MAX_INT_31);
+};
+
+exports.Long = function (obj) {
+  return exports.object(obj)
+    && exports.number(obj.high)
+    && exports.number(obj.low);
 };
 
 exports.double = function (obj) {
