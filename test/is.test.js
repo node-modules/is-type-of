@@ -15,6 +15,29 @@ var should = require('should');
 var Long = require('long');
 
 describe('is', function () {
+  describe('finite', function () {
+    it('should true', function () {
+      is.finite(37);
+    });
+
+    it('should false', function () {
+      is.finite(NaN);
+      is.finite(Number.NaN);
+      is.finite(0 / 0)
+      is.finite(undefined);
+      is.finite({});
+
+      is.finite(true);
+      is.finite(null);
+ 
+      is.finite("37");
+      is.finite("37.37");
+      is.finite("");
+      is.finite(" ");
+      is.finite("NaN");
+      is.finite("blabla");
+    });
+  });
   describe('NaN', function () {
     it('should true', function () {
       is.NaN(NaN);
