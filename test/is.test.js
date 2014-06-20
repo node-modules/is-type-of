@@ -17,48 +17,48 @@ var Long = require('long');
 describe('is', function () {
   describe('finite', function () {
     it('should true', function () {
-      is.finite(37);
+      is.finite(37).should.equal(true);
     });
 
     it('should false', function () {
-      is.finite(NaN);
-      is.finite(Number.NaN);
-      is.finite(0 / 0)
-      is.finite(undefined);
-      is.finite({});
+      is.finite(NaN).should.equal(false);
+      is.finite(Number.NaN).should.equal(false);
+      is.finite(0 / 0).should.equal(false);
+      is.finite(undefined).should.equal(false);
+      is.finite({}).should.equal(false);
 
-      is.finite(true);
-      is.finite(null);
- 
-      is.finite("37");
-      is.finite("37.37");
-      is.finite("");
-      is.finite(" ");
-      is.finite("NaN");
-      is.finite("blabla");
+      is.finite(true).should.equal(false);
+      is.finite(null).should.equal(false);
+
+      is.finite("37").should.equal(false);
+      is.finite("37.37").should.equal(false);
+      is.finite("").should.equal(false);
+      is.finite(" ").should.equal(false);
+      is.finite("NaN").should.equal(false);
+      is.finite("blabla").should.equal(false);
     });
   });
   describe('NaN', function () {
     it('should true', function () {
-      is.NaN(NaN);
-      is.NaN(Number.NaN);
-      is.NaN(0 / 0)
+      is.NaN(NaN).should.equal(true);
+      is.NaN(Number.NaN).should.equal(true);
+      is.NaN(0 / 0).should.equal(true);
     });
 
     it('should false', function () {
-      is.NaN(undefined);
-      is.NaN({});
+      is.NaN(undefined).should.equal(false);
+      is.NaN({}).should.equal(false);
 
-      is.NaN(true);
-      is.NaN(null);
-      is.NaN(37);
+      is.NaN(true).should.equal(false);
+      is.NaN(null).should.equal(false);
+      is.NaN(37).should.equal(false);
 
-      is.NaN("37");
-      is.NaN("37.37");
-      is.NaN("");
-      is.NaN(" ");
-      is.NaN("NaN");
-      is.NaN("blabla");
+      is.NaN("37").should.equal(false);
+      is.NaN("37.37").should.equal(false);
+      is.NaN("").should.equal(false);
+      is.NaN(" ").should.equal(false);
+      is.NaN("NaN").should.equal(false);
+      is.NaN("blabla").should.equal(false);
     });
   });
   describe('generator', function () {
