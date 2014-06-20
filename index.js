@@ -34,6 +34,10 @@ exports.duplexStream = isStearm.isDuplex;
  * Extend method
  */
 
+exports.finite = function (obj) {
+  return Number.isFinite(obj);
+};
+
 exports.NaN = function (obj) {
   return Number.isNaN(obj);
 };

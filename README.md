@@ -73,6 +73,8 @@ is.double(0); // => false
 
 ### Extend API
 
+#### is.finite(num)
+
 #### is.NaN(NaN)
 
 #### is.generator(gen)
