@@ -71,6 +71,10 @@ is.double(0); // => false
 
 #### is.duplexStream(duplex)
 
+### from [is-class](https://github.com/miguelmota/is-class)
+
+#### is.class(obj)
+
 ### Extend API
 
 #### is.finite(num)

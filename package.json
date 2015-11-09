@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git://github.com/node-modules/is-type-of.git"
   },
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "typeof",
     "checker",
@@ -29,10 +31,12 @@
     "istanbul-harmony": "*",
     "long": "1.1.2",
     "mocha": "^1.17.1",
+    "semver": "^5.0.3",
     "should": "3.3.1"
   },
   "dependencies": {
     "core-util-is": "^1.0.1",
+    "is-class": "0.0.3",
     "isstream": "^0.1.0"
   }
 }

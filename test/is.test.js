@@ -13,6 +13,7 @@
 var is = require('..');
 var should = require('should');
 var Long = require('long');
+var semver = require('semver');
 
 describe('is', function () {
   describe('finite', function () {
@@ -115,6 +116,21 @@ describe('is', function () {
       is.promise(obj).should.equal(false);
       is.promise(number).should.equal(false);
     });
+  });
+
+  describe('class', function () {
+    if (semver.gt(process.version.substring(1), '4.0.0')){
+      it('should true', function () {
+        class Foo{};
+        is.class(Foo).should.equal(true);
+      });
+
+      it('should false', function () {
+        function Bar(){};
+        is.class(Bar).should.equal(false);
+        is.class({}).should.equal(false);
+      });
+    }
   });
 
   describe('int', function () {

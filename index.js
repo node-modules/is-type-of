@@ -12,6 +12,7 @@
 
 var utils = require('core-util-is');
 var isStearm = require('isstream');
+var isClass = require('is-class');
 
 /**
  * Expose all methods in core-util-is
@@ -29,6 +30,11 @@ exports.stream = isStearm;
 exports.readableStream = isStearm.isReadable;
 exports.writableStream = isStearm.isWritable;
 exports.duplexStream = isStearm.isDuplex;
+
+/**
+ * Class detected by is-class
+ */
+ exports.class = isClass;
 
 /**
  * Extend method
