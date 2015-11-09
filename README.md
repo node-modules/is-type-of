@@ -73,7 +73,7 @@ is.double(0); // => false
 
 ### from [is-class](https://github.com/miguelmota/is-class)
 
-#### is.clz(obj)
+#### is.class(obj)
 
 ### Extend API
 

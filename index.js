@@ -34,7 +34,7 @@ exports.duplexStream = isStearm.isDuplex;
 /**
  * Class detected by is-class
  */
- exports.clz = isClass;
+ exports.class = isClass;
 
 /**
  * Extend method

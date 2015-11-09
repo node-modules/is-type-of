@@ -122,13 +122,13 @@ describe('is', function () {
     if (semver.gt(process.version.substring(1), '4.0.0')){
       it('should true', function () {
         class Foo{};
-        is.clz(Foo).should.equal(true);
+        is.class(Foo).should.equal(true);
       });
 
       it('should false', function () {
         function Bar(){};
-        is.clz(Bar).should.equal(false);
-        is.clz({}).should.equal(false);
+        is.class(Bar).should.equal(false);
+        is.class({}).should.equal(false);
       });
     }
   });
