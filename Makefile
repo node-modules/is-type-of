@@ -37,7 +37,8 @@ cov:
 	@./node_modules/.bin/cov coverage
 
 autod: install
-	@./node_modules/.bin/autod -w -e example.js
+	@./node_modules/.bin/autod -w -e example.js --prefix="~" \
+	-D autod,mocha,istanbul
 	@$(MAKE) install
 
 contributors: install

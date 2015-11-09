@@ -26,17 +26,17 @@
   },
   "homepage": "https://github.com/node-modules/is-type-of",
   "devDependencies": {
-    "autod": "^0.1.1",
+    "autod": "~2.1.3",
     "contributors": "*",
-    "istanbul-harmony": "*",
-    "long": "1.1.2",
-    "mocha": "^1.17.1",
-    "semver": "^5.0.3",
-    "should": "3.3.1"
+    "istanbul": "~0.4.0",
+    "long": "~3.0.1",
+    "mocha": "~2.3.3",
+    "semver": "~5.0.3",
+    "should": "~7.1.1"
   },
   "dependencies": {
-    "core-util-is": "^1.0.1",
-    "is-class": "0.0.3",
-    "isstream": "^0.1.0"
+    "core-util-is": "~1.0.1",
+    "is-class": "~0.0.3",
+    "isstream": "~0.1.2"
   }
 }
