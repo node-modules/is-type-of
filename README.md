@@ -7,6 +7,7 @@ dependencies:
 
 - [core-util-is](https://github.com/isaacs/core-util-is)
 - [is-stream](https://github.com/rvagg/isstream)
+- [is-class](https://github.com/miguelmota/is-class)
 
 ## Install
 
