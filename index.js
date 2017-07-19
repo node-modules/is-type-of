@@ -100,7 +100,11 @@ exports.regexp = exports.regExp;
 
 exports.error = function isError(obj) {
   return obj instanceof Error;
-}
+};
+
+exports.array = function isArray(obj) {
+  return Array.isArray(obj);
+};
 
 /**
  * transform isNull type to null
