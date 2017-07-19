@@ -1,221 +1,221 @@
 'use strict';
 
+const assert = require('assert');
 const is = require('..');
-const should = require('should');
 const Long = require('long');
 const semver = require('semver');
 
-describe('is', function () {
-  describe('finite', function () {
-    it('should true', function () {
-      is.finite(37).should.equal(true);
+describe('is', () => {
+  describe('finite', () => {
+    it('should true', () => {
+      assert(is.finite(37) === true);
     });
 
-    it('should false', function () {
-      is.finite(NaN).should.equal(false);
-      is.finite(Number.NaN).should.equal(false);
-      is.finite(0 / 0).should.equal(false);
-      is.finite(undefined).should.equal(false);
-      is.finite({}).should.equal(false);
+    it('should false', () => {
+      assert(is.finite(NaN) === false);
+      assert(is.finite(Number.NaN) === false);
+      assert(is.finite(0 / 0) === false);
+      assert(is.finite(undefined) === false);
+      assert(is.finite({}) === false);
 
-      is.finite(true).should.equal(false);
-      is.finite(null).should.equal(false);
+      assert(is.finite(true) === false);
+      assert(is.finite(null) === false);
 
-      is.finite("37").should.equal(false);
-      is.finite("37.37").should.equal(false);
-      is.finite("").should.equal(false);
-      is.finite(" ").should.equal(false);
-      is.finite("NaN").should.equal(false);
-      is.finite("blabla").should.equal(false);
-    });
-  });
-  describe('NaN', function () {
-    it('should true', function () {
-      is.NaN(NaN).should.equal(true);
-      is.NaN(Number.NaN).should.equal(true);
-      is.NaN(0 / 0).should.equal(true);
-    });
-
-    it('should false', function () {
-      is.NaN(undefined).should.equal(false);
-      is.NaN({}).should.equal(false);
-
-      is.NaN(true).should.equal(false);
-      is.NaN(null).should.equal(false);
-      is.NaN(37).should.equal(false);
-
-      is.NaN("37").should.equal(false);
-      is.NaN("37.37").should.equal(false);
-      is.NaN("").should.equal(false);
-      is.NaN(" ").should.equal(false);
-      is.NaN("NaN").should.equal(false);
-      is.NaN("blabla").should.equal(false);
+      assert(is.finite("37") === false);
+      assert(is.finite("37.37") === false);
+      assert(is.finite("") === false);
+      assert(is.finite(" ") === false);
+      assert(is.finite("NaN") === false);
+      assert(is.finite("blabla") === false);
     });
   });
-  describe('generator', function () {
-    it('should true', function () {
+  describe('NaN', () => {
+    it('should true', () => {
+      assert(is.NaN(NaN) === true);
+      assert(is.NaN(Number.NaN) === true);
+      assert(is.NaN(0 / 0) === true);
+    });
+
+    it('should false', () => {
+      assert(is.NaN(undefined) === false);
+      assert(is.NaN({}) === false);
+
+      assert(is.NaN(true) === false);
+      assert(is.NaN(null) === false);
+      assert(is.NaN(37) === false);
+
+      assert(is.NaN("37") === false);
+      assert(is.NaN("37.37") === false);
+      assert(is.NaN("") === false);
+      assert(is.NaN(" ") === false);
+      assert(is.NaN("NaN") === false);
+      assert(is.NaN("blabla") === false);
+    });
+  });
+  describe('generator', () => {
+    it('should true', () => {
       var gen = function *() {
         yield 1;
         return 2;
       };
-      is.generator(gen()).should.equal(true);
+      assert(is.generator(gen()) === true);
     });
 
-    it('should false', function () {
+    it('should false', () => {
       var gen = function *() {};
-      var fun = function () {};
+      var fun = () => {};
       var obj = {};
-      is.generator(gen).should.equal(false);
-      is.generator(fun).should.equal(false);
-      is.generator(obj).should.equal(false);
+      assert(is.generator(gen) === false);
+      assert(is.generator(fun) === false);
+      assert(is.generator(obj) === false);
     });
   });
 
-  describe('generatorFunction', function () {
-    it('should true', function () {
+  describe('generatorFunction', () => {
+    it('should true', () => {
       var gen = function *() {
         yield 1;
         return 2;
       };
-      is.generatorFunction(gen).should.equal(true);
+      assert(is.generatorFunction(gen) === true);
     });
 
-    it('should false', function () {
+    it('should false', () => {
       var gen = function *() {};
-      var fun = function () {};
+      var fun = () => {};
       var obj = {};
-      is.generatorFunction(gen()).should.equal(false);
-      is.generatorFunction(fun).should.equal(false);
-      is.generatorFunction(obj).should.equal(false);
+      assert(is.generatorFunction(gen()) === false);
+      assert(is.generatorFunction(fun) === false);
+      assert(is.generatorFunction(obj) === false);
     });
   });
 
-  describe('promise', function () {
-    it('should true', function () {
+  describe('promise', () => {
+    it('should true', () => {
       var pro = {
-        then: function () {}
+        then: () => {}
       };
-      is.promise(pro).should.equal(true);
+      assert(is.promise(pro) === true);
     });
 
-    it('should false', function () {
+    it('should false', () => {
       var hasthen = {then: 1};
       var obj = {};
       var number = 1;
-      is.promise(hasthen).should.equal(false);
-      is.promise(obj).should.equal(false);
-      is.promise(number).should.equal(false);
+      assert(is.promise(hasthen) === false);
+      assert(is.promise(obj) === false);
+      assert(is.promise(number) === false);
     });
   });
 
-  describe('class', function () {
+  describe('class', () => {
     if (semver.gt(process.version.substring(1), '4.0.0')){
-      it('should true', function () {
+      it('should true', () => {
         class Foo{};
-        is.class(Foo).should.equal(true);
+        assert(is.class(Foo) === true);
       });
 
-      it('should false', function () {
+      it('should false', () => {
         function Bar(){};
-        is.class(Bar).should.equal(false);
-        is.class({}).should.equal(false);
+        assert(is.class(Bar) === false);
+        assert(is.class({}) === false);
       });
     }
   });
 
-  describe('int', function () {
-    it('should true', function () {
-      is.int(0).should.equal(true);
-      is.int(-100).should.equal(true);
-      is.int(100).should.equal(true);
-      is.int(Math.pow(2, 31)).should.equal(true);
-      is.int(Math.pow(2, 50)).should.equal(true);
-      is.int(-Math.pow(2, 31)).should.equal(true);
-      is.int(-Math.pow(2, 50)).should.equal(true);
+  describe('int', () => {
+    it('should true', () => {
+      assert(is.int(0) === true);
+      assert(is.int(-100) === true);
+      assert(is.int(100) === true);
+      assert(is.int(Math.pow(2, 31)) === true);
+      assert(is.int(Math.pow(2, 50)) === true);
+      assert(is.int(-Math.pow(2, 31)) === true);
+      assert(is.int(-Math.pow(2, 50)) === true);
     });
 
-    it('should false', function () {
-      is.int(0.1).should.equal(false);
-      is.int(-0.1).should.equal(false);
-      is.int(-111110.1).should.equal(false);
-      is.int(11110.12312321).should.equal(false);
-      is.int('1.1').should.equal(false);
-    });
-  });
-
-  describe('int32', function () {
-    it('should true', function () {
-      is.int32(0).should.equal(true);
-      is.int32(-100).should.equal(true);
-      is.int32(100).should.equal(true);
-      is.int32(Math.pow(2, 31) - 1).should.equal(true);
-      is.int32(-Math.pow(2, 31)).should.equal(true);
-    });
-
-    it('should false', function () {
-      is.int32(Math.pow(2, 31)).should.equal(false);
-      is.int32(Math.pow(2, 50)).should.equal(false);
-      is.int32(-Math.pow(2, 31) - 1).should.equal(false);
-      is.int32(-Math.pow(2, 50)).should.equal(false);
-      is.int32(-Math.pow(2, 63)).should.equal(false);
-      is.int32(0.1).should.equal(false);
-      is.int32(-0.1).should.equal(false);
-      is.int32(-111110.1).should.equal(false);
-      is.int32(11110.12312321).should.equal(false);
-      is.int32('1.1').should.equal(false);
+    it('should false', () => {
+      assert(is.int(0.1) === false);
+      assert(is.int(-0.1) === false);
+      assert(is.int(-111110.1) === false);
+      assert(is.int(11110.12312321) === false);
+      assert(is.int('1.1') === false);
     });
   });
 
-  describe('long', function () {
-    it('should true', function () {
-      is.long(Math.pow(2, 31)).should.equal(true);
-      is.long(Math.pow(2, 50)).should.equal(true);
-      is.long(-Math.pow(2, 31) - 1).should.equal(true);
-      is.long(-Math.pow(2, 50)).should.equal(true);
-      is.long(-Math.pow(2, 63)).should.equal(true);
+  describe('int32', () => {
+    it('should true', () => {
+      assert(is.int32(0) === true);
+      assert(is.int32(-100) === true);
+      assert(is.int32(100) === true);
+      assert(is.int32(Math.pow(2, 31) - 1) === true);
+      assert(is.int32(-Math.pow(2, 31)) === true);
     });
 
-    it('should false', function () {
-      is.long(0.1).should.equal(false);
-      is.long(-0.1).should.equal(false);
-      is.long(-111110.1).should.equal(false);
-      is.long(11110.12312321).should.equal(false);
-      is.long('1.1').should.equal(false);
-      is.long(0).should.equal(false);
-      is.long(-100).should.equal(false);
-      is.long(100).should.equal(false);
-      is.long(Math.pow(2, 31) - 1).should.equal(false);
-      is.long(-Math.pow(2, 31)).should.equal(false);
+    it('should false', () => {
+      assert(is.int32(Math.pow(2, 31)) === false);
+      assert(is.int32(Math.pow(2, 50)) === false);
+      assert(is.int32(-Math.pow(2, 31) - 1) === false);
+      assert(is.int32(-Math.pow(2, 50)) === false);
+      assert(is.int32(-Math.pow(2, 63)) === false);
+      assert(is.int32(0.1) === false);
+      assert(is.int32(-0.1) === false);
+      assert(is.int32(-111110.1) === false);
+      assert(is.int32(11110.12312321) === false);
+      assert(is.int32('1.1') === false);
     });
   });
 
-  describe('Long', function () {
-    it('should true', function () {
-      is.Long(Long.fromNumber(Math.pow(2, 31))).should.equal(true);
-      is.Long(Long.fromString('1024102410241024')).should.equal(true);
+  describe('long', () => {
+    it('should true', () => {
+      assert(is.long(Math.pow(2, 31)) === true);
+      assert(is.long(Math.pow(2, 50)) === true);
+      assert(is.long(-Math.pow(2, 31) - 1) === true);
+      assert(is.long(-Math.pow(2, 50)) === true);
+      assert(is.long(-Math.pow(2, 63)) === true);
     });
 
-    it('should false', function () {
-      is.Long(123).should.equal(false);
+    it('should false', () => {
+      assert(is.long(0.1) === false);
+      assert(is.long(-0.1) === false);
+      assert(is.long(-111110.1) === false);
+      assert(is.long(11110.12312321) === false);
+      assert(is.long('1.1') === false);
+      assert(is.long(0) === false);
+      assert(is.long(-100) === false);
+      assert(is.long(100) === false);
+      assert(is.long(Math.pow(2, 31) - 1) === false);
+      assert(is.long(-Math.pow(2, 31)) === false);
+    });
+  });
+
+  describe('Long', () => {
+    it('should true', () => {
+      assert(is.Long(Long.fromNumber(Math.pow(2, 31))) === true);
+      assert(is.Long(Long.fromString('1024102410241024')) === true);
+    });
+
+    it('should false', () => {
+      assert(is.Long(123) === false);
     });
   })
 
-  describe('double', function () {
-    it('should true', function () {
-      is.double(0.1).should.equal(true);
-      is.double(-0.1).should.equal(true);
-      is.double(-111110.1).should.equal(true);
-      is.double(11110.12312321).should.equal(true);
+  describe('double', () => {
+    it('should true', () => {
+      assert(is.double(0.1) === true);
+      assert(is.double(-0.1) === true);
+      assert(is.double(-111110.1) === true);
+      assert(is.double(11110.12312321) === true);
     });
 
-    it('should false', function () {
-      is.double(0).should.equal(false);
-      is.double(-100).should.equal(false);
-      is.double(100).should.equal(false);
-      is.double(Math.pow(2, 31)).should.equal(false);
-      is.double(Math.pow(2, 50)).should.equal(false);
-      is.double(-Math.pow(2, 31)).should.equal(false);
-      is.double(-Math.pow(2, 50)).should.equal(false);
+    it('should false', () => {
+      assert(is.double(0) === false);
+      assert(is.double(-100) === false);
+      assert(is.double(100) === false);
+      assert(is.double(Math.pow(2, 31)) === false);
+      assert(is.double(Math.pow(2, 50)) === false);
+      assert(is.double(-Math.pow(2, 31)) === false);
+      assert(is.double(-Math.pow(2, 50)) === false);
     });
   });
 });

@@ -4,4 +4,5 @@ node_js:
   - '4'
   - '6'
   - '8'
-script: make test
+script: npm test
+after_success: npm i codecov && nyc report --reporter=text-lcov > coverage.lcov && codecov
