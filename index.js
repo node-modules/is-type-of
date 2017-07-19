@@ -1,14 +1,4 @@
-/*!
- * is-type-of - index.js
- * Copyright(c) 2014 dead_horse <dead_horse@qq.com>
- * MIT Licensed
- */
-
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var utils = require('core-util-is');
 var isStearm = require('isstream');
@@ -93,6 +83,14 @@ exports.double = function (obj) {
   return utils.isNumber(obj)
     && !isNaN(obj)
     && obj % 1 !== 0;
+};
+
+/**
+ * override core-util-is
+ */
+
+exports.date = function isDate(obj) {
+  return obj instanceof Date;
 };
 
 /**

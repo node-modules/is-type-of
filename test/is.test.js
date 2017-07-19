@@ -1,19 +1,9 @@
-/*!
- * is-type-of - test/is.test.js
- * Copyright(c) 2014 dead_horse <dead_horse@qq.com>
- * MIT Licensed
- */
-
 'use strict';
 
-/**
- * Module dependencies.
- */
-
-var is = require('..');
-var should = require('should');
-var Long = require('long');
-var semver = require('semver');
+const is = require('..');
+const should = require('should');
+const Long = require('long');
+const semver = require('semver');
 
 describe('is', function () {
   describe('finite', function () {
