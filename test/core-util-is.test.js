@@ -7,6 +7,7 @@ const is = require('..');
 describe('core-util-is.test.js', () => {
   it('should work', () => {
     assert.equal(is.array([]), true);
+    assert.equal(is.array(new Array([1, 2, 3])), true);
     assert.equal(is.array({}), false);
 
     assert.equal(is.boolean(null), false);
