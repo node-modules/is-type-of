@@ -93,6 +93,12 @@ exports.date = function isDate(obj) {
   return obj instanceof Date;
 };
 
+exports.regExp = function isRegExp(obj) {
+  return obj instanceof RegExp;
+};
+
+exports.regexp = exports.regExp;
+
 /**
  * transform isNull type to null
  * @param {[type]} m [description]

@@ -44,6 +44,11 @@ describe('core-util-is.test.js', () => {
     assert.equal(is.regExp(null), false);
     assert.equal(is.regExp('1'), false);
     assert.equal(is.regExp(new RegExp()), true);
+    assert.equal(is.regExp(/foo/), true);
+    assert.equal(is.regexp(null), false);
+    assert.equal(is.regexp('1'), false);
+    assert.equal(is.regexp(new RegExp()), true);
+    assert.equal(is.regexp(/foo/), true);
 
     assert.equal(is.object({}), true);
     assert.equal(is.object([]), true);
