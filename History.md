@@ -1,4 +1,14 @@
 
+1.1.0 / 2017-07-19
+==================
+
+  * deps: upgrade is-class@0.0.4
+  * feat: is.array() use Array.isArray() directly
+  * feat: improve is.error performance
+  * feat: improve is.regExp performance
+  * test: support coverage
+  * feat: imrpove is.date performance (#4)
+
 1.0.0 / 2015-11-09 
 ==================
 
