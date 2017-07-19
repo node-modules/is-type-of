@@ -96,8 +96,11 @@ exports.date = function isDate(obj) {
 exports.regExp = function isRegExp(obj) {
   return obj instanceof RegExp;
 };
-
 exports.regexp = exports.regExp;
+
+exports.error = function isError(obj) {
+  return obj instanceof Error;
+}
 
 /**
  * transform isNull type to null

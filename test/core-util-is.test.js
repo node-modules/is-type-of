@@ -59,9 +59,20 @@ describe('core-util-is.test.js', () => {
     assert.equal(is.date('1'), false);
     assert.equal(is.date(new Date()), true);
 
+    class CustomError extends Error {
+      constructor(message) {
+        super(message);
+        Error.captureStackTrace(this, CustomError);
+      }
+    }
+
     assert.equal(is.error(null), false);
     assert.equal(is.error({ err: true }), false);
     assert.equal(is.error(new Error()), true);
+    assert.equal(is.error(new TypeError()), true);
+    assert.equal(is.error(new RangeError()), true);
+    assert.equal(is.error(new ReferenceError()), true);
+    assert.equal(is.error(new CustomError('c')), true);
 
     assert.equal(is.function(null), false);
     assert.equal(is.function({}), false);
