@@ -90,27 +90,6 @@ describe('is', () => {
     });
   });
 
-  describe('asyncFunction', () => {
-    if (semver.gte(process.version.substring(1), '7.6.0')){
-      it('should true', () => {
-        var asyncFun = async function() {
-          await 1;
-          return 2;
-        };
-        assert(is.asyncFunction(asyncFun) === true);
-      });
-
-      it('should false', () => {
-        var asyncFun = async function() {};
-        var fun = () => {};
-        var obj = {};
-        assert(is.generatorFunction(asyncFun()) === false);
-        assert(is.generatorFunction(fun) === false);
-        assert(is.generatorFunction(obj) === false);
-      });
-    }
-  });
-
   describe('promise', () => {
     it('should true', () => {
       var pro = {
@@ -143,6 +122,10 @@ describe('is', () => {
       });
     }
   });
+
+  if(semver.gt(process.version.substring(1), '7.6.0')) {
+    require('./async');
+  };
 
   describe('int', () => {
     it('should true', () => {
