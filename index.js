@@ -50,6 +50,12 @@ exports.generatorFunction = function (obj) {
     && 'GeneratorFunction' === obj.constructor.name;
 };
 
+exports.asyncFunction = function (obj) {
+  return obj
+    && obj.constructor
+    && 'AsyncFunction' === obj.constructor.name;
+};
+
 exports.promise = function (obj) {
   return obj
     && 'function' === typeof obj.then;
