@@ -123,6 +123,10 @@ describe('is', () => {
     }
   });
 
+  if(semver.gt(process.version.substring(1), '7.6.0')) {
+    require('./async');
+  };
+
   describe('int', () => {
     it('should true', () => {
       assert(is.int(0) === true);
