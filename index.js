@@ -30,13 +30,9 @@ exports.duplexStream = isStearm.isDuplex;
  * Extend method
  */
 
-exports.finite = function (obj) {
-  return Number.isFinite(obj);
-};
+exports.finite = Number.isFinite;
 
-exports.NaN = function (obj) {
-  return Number.isNaN(obj);
-};
+exports.NaN = Number.isNaN
 
 exports.generator = function (obj) {
   return obj
@@ -108,9 +104,7 @@ exports.error = function isError(obj) {
   return obj instanceof Error;
 };
 
-exports.array = function isArray(obj) {
-  return Array.isArray(obj);
-};
+exports.array = Array.isArray;
 
 /**
  * transform isNull type to null
