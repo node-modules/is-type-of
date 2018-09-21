@@ -1,4 +1,13 @@
 
+1.2.1 / 2018-09-22
+==================
+
+**fixes**
+  * [[`1468e4e`](http://github.com/node-modules/is-type-of/commit/1468e4e2d2a1221ff25187f430e5546db2fadacc)] - fix: hotfix is-class bug (#10) (fengmk2 <<fengmk2@gmail.com>>)
+
+**others**
+  * [[`32aab2b`](http://github.com/node-modules/is-type-of/commit/32aab2b5431e76529f2cf9ddf1d112b99ed05394)] - chore: Improve some functions (#8) (Runrioter Wung <<runrioter@gmail.com>>)
+
 1.2.0 / 2017-08-10
 ==================
 
