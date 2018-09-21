@@ -2,7 +2,8 @@
 
 var utils = require('core-util-is');
 var isStearm = require('isstream');
-var isClass = require('is-class');
+// wait for https://github.com/miguelmota/is-class/pull/6 merge
+var isClass = require('is-class-hotfix');
 
 /**
  * Expose all methods in core-util-is

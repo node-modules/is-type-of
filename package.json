@@ -27,7 +27,7 @@
   "homepage": "https://github.com/node-modules/is-type-of",
   "dependencies": {
     "core-util-is": "^1.0.2",
-    "is-class": "~0.0.4",
+    "is-class-hotfix": "~0.0.6",
     "isstream": "~0.1.2"
   },
   "devDependencies": {
