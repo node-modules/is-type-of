@@ -109,10 +109,18 @@ describe('is', () => {
   });
 
   describe('class', () => {
-    if (semver.gt(process.version.substring(1), '4.0.0')){
+    if (semver.gt(process.version.substring(1), '4.0.0')) {
       it('should true', () => {
         class Foo{};
         assert(is.class(Foo) === true);
+        assert(is.class(class {}) === true);
+        assert(is.class(class{}) === true);
+        assert(is.class(class OK2{}) === true);
+        assert(is.class(class OK{constructor(){}}) === true);
+        assert(is.class(class{constructor(){}}) === true);
+        assert(is.class(class {constructor(){}}) === true);
+        assert(is.class(class _{constructor(){}}) === true);
+        assert(is.class(class _F___ {constructor(){}}) === true);
       });
 
       it('should false', () => {
