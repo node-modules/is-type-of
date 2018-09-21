@@ -121,6 +121,8 @@ describe('is', () => {
         assert(is.class(class {constructor(){}}) === true);
         assert(is.class(class _{constructor(){}}) === true);
         assert(is.class(class _F___ {constructor(){}}) === true);
+        assert(is.class(class B extends(Foo){}) === true);
+        assert(is.class(class{constructor(app){cov_1z5ezlsbi5.f[0]++;cov_1z5ezlsbi5.s[17]++;this.app=app;}configDidLoad(){cov_1z5ezlsbi5.f[1]++;}}) === true);
       });
 
       it('should false', () => {
