@@ -212,7 +212,7 @@ describe('is', () => {
     it('should false', () => {
       assert(is.Long(123) === false);
     });
-  })
+  });
 
   describe('double', () => {
     it('should true', () => {
@@ -230,6 +230,26 @@ describe('is', () => {
       assert(is.double(Math.pow(2, 50)) === false);
       assert(is.double(-Math.pow(2, 31)) === false);
       assert(is.double(-Math.pow(2, 50)) === false);
+    });
+  });
+
+  describe('bigInt, bigint', () => {
+    it('should true', () => {
+      assert(is.bigInt(0n) === true);
+      assert(is.bigInt(1n) === true);
+      assert(is.bigInt(-1n) === true);
+      assert(is.bigInt(-111110n) === true);
+      assert(is.bigInt(1111012312321n) === true);
+    });
+
+    it('should false', () => {
+      assert(is.bigInt(0) === false);
+      assert(is.bigInt(-100) === false);
+      assert(is.bigInt(100) === false);
+      assert(is.bigInt(Math.pow(2, 31)) === false);
+      assert(is.bigInt(Math.pow(2, 50)) === false);
+      assert(is.bigInt(-Math.pow(2, 31)) === false);
+      assert(is.bigint(-Math.pow(2, 50)) === false);
     });
   });
 });
