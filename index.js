@@ -88,6 +88,12 @@ exports.double = function (obj) {
     && obj % 1 !== 0;
 };
 
+exports.bigInt = function (obj) {
+  return obj
+    && 'bigint' === typeof obj;
+};
+exports.bigint = exports.bigInt;
+
 /**
  * override core-util-is
  */
