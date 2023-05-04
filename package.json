@@ -4,8 +4,8 @@
   "description": "complete type checking for node",
   "main": "index.js",
   "scripts": {
-    "test": "egg-bin test",
-    "ci": "egg-bin cov",
+    "test": "tsd && egg-bin test",
+    "ci": "tsd && egg-bin cov",
     "lint": "echo 'ignore'"
   },
   "repository": {
@@ -13,7 +13,8 @@
     "url": "git://github.com/node-modules/is-type-of.git"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "keywords": [
     "typeof",
@@ -33,10 +34,12 @@
     "isstream": "~0.1.2"
   },
   "devDependencies": {
+    "@types/node": "^18.16.3",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
-    "egg-bin": "^5.6.1",
+    "egg-bin": "^6.4.0",
     "long": "^3.2.0",
-    "semver": "^5.4.1"
+    "semver": "^5.4.1",
+    "tsd": "^0.28.1"
   }
 }
