@@ -37,7 +37,7 @@
     "@types/node": "^18.16.3",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
-    "egg-bin": "^5.6.1",
+    "egg-bin": "^6.4.0",
     "long": "^3.2.0",
     "semver": "^5.4.1",
     "tsd": "^0.28.1"
