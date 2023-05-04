@@ -33,7 +33,7 @@ exports.duplexStream = isStearm.isDuplex;
 
 exports.finite = Number.isFinite;
 
-exports.NaN = Number.isNaN
+exports.NaN = Number.isNaN;
 
 exports.generator = function (obj) {
   return obj
@@ -87,6 +87,11 @@ exports.double = function (obj) {
     && !isNaN(obj)
     && obj % 1 !== 0;
 };
+
+exports.bigInt = function (obj) {
+  return 'bigint' === typeof obj;
+};
+exports.bigint = exports.bigInt;
 
 /**
  * override core-util-is
