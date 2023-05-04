@@ -61,3 +61,5 @@ export function double(val: any): boolean;
 export function finite(val: any): boolean;
 export function NaN(val: any): boolean;
 
+export function bigInt(val: any): boolean;
+export function bigint(val: any): boolean;
