@@ -18,6 +18,9 @@ npm install is-type-of
 ## Example
 
 ```
+import is from 'is-type-of';
+import { isArray } from 'is-type-of';
+
 var is = require('is-type-of');
 
 is.array([1]); // => true

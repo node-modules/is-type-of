@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": [
+    "eslint-config-egg/typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-new-wrappers": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-useless-constructor": "off"
+  }
+}
