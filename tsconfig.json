@@ -1,0 +1,14 @@
+{
+  "extends": "@eggjs/tsconfig",
+  "compileOnSave": true,
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "target": "es2022"
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
