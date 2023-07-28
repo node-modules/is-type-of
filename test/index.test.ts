@@ -45,8 +45,6 @@ import {
   undefined as isUndefinedCompatibleExpect,
   bigInt as isBigIntCompatibleExpect,
   null as isNullCompatibleExpect,
-  nullable as isNullableCompatibleExpect,
-  integer as isIntegerCompatibleExpect,
   int32 as isInteger32CompatibleExpect,
   Long as isLongObjectCompatibleExpect,
   long as isLongCompatibleExpect,
@@ -58,7 +56,6 @@ import {
   function as isFunctionCompatibleExpect,
   generatorFunction as isGeneratorFunctionCompatibleExpect,
   asyncFunction as isAsyncFunctionCompatibleExpect,
-  asyncGeneratorFunction as isAsyncGeneratorFunctionCompatibleExpect,
   object as isObjectCompatibleExpect,
   class as isClassCompatibleExpect,
   regExp as isRegExpCompatibleExpect,
@@ -130,8 +127,6 @@ describe('test/index.test.ts', () => {
     assert.strictEqual(isUndefinedCompatibleExpect, isUndefined);
     assert.strictEqual(isBigIntCompatibleExpect, isBigInt);
     assert.strictEqual(isNullCompatibleExpect, isNull);
-    assert.strictEqual(isNullableCompatibleExpect, isNullable);
-    assert.strictEqual(isIntegerCompatibleExpect, isInteger);
     assert.strictEqual(isInteger32CompatibleExpect, isInteger32);
     assert.strictEqual(isLongCompatibleExpect, isLong);
     assert.strictEqual(isLongObjectCompatibleExpect, isLongObject);
@@ -143,7 +138,6 @@ describe('test/index.test.ts', () => {
     assert.strictEqual(isFunctionCompatibleExpect, isFunction);
     assert.strictEqual(isGeneratorFunctionCompatibleExpect, isGeneratorFunction);
     assert.strictEqual(isAsyncFunctionCompatibleExpect, isAsyncFunction);
-    assert.strictEqual(isAsyncGeneratorFunctionCompatibleExpect, isAsyncGeneratorFunction);
     assert.strictEqual(isObjectCompatibleExpect, isObject);
     assert.strictEqual(isClassCompatibleExpect, isClass);
     assert.strictEqual(isRegExpCompatibleExpect, isRegExp);

@@ -84,11 +84,6 @@ export const is = {
   bigInt: isBigInt,
 
   /**
-   * @see {isBigInt}
-   */
-  bigint: isBigInt,
-
-  /**
    * @see {isPrimitive}
    */
   primitive: isPrimitive,

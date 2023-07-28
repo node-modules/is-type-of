@@ -15,13 +15,22 @@ Complete type checking for Node
 npm install is-type-of
 ```
 
-## Example
+## Usage
 
-```
+Use ES Module import
+
+```typescript
 import is from 'is-type-of';
 import { isArray } from 'is-type-of';
 
-var is = require('is-type-of');
+isArray([]); // => true
+is.array(); // => true
+```
+
+Compatible With
+
+```javascript
+const is = require('is-type-of');
 
 is.array([1]); // => true
 is.primitive(true); // => true
@@ -30,6 +39,21 @@ is.generatorFunction(function * () {}); // => true
 is.long(Math.pow(2, 33)); // => true
 is.double(0); // => false
 ```
+
+Use Type Guard
+
+```typescript
+import { isArray } from 'is-type-of';
+
+function checkArray(arr: string[] | string) {
+  // => parameter) arr: string | string[]
+  if (isArray(arr)) {
+    // => (parameter) arr: string[]
+    arr.forEach(console.log);
+  }
+}
+```
+
 
 ## API Document
 
