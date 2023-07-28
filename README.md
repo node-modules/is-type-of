@@ -196,7 +196,9 @@ See Also `is.object`
 
 #### isClass
 
-Returns true if `val` is class. *Note:* "class" is supported in ECMAScript 6, and if the code is using some compiler or transpiler, the checking might fail.
+Returns true if `val` is class.
+
+**Note:** "class" is supported in ECMAScript 6, and if the code is using some compiler or transpiler, the checking might fail.
 
 See Also `is.class`
 
