@@ -18,7 +18,6 @@ describe('is', () => {
     assert.strictEqual(is.null, isNull);
     assert.strictEqual(is.nullable, isNullable);
     assert.strictEqual(is.bigInt, isBigInt);
-    assert.strictEqual(is.bigint, isBigInt);
     assert.strictEqual(is.integer, isInteger);
     assert.strictEqual(is.integer32, isInteger32);
     assert.strictEqual(is.long, isLong);
