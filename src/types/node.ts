@@ -2,22 +2,37 @@ import { Buffer } from 'node:buffer';
 import { Duplex, Readable, Stream, Writable } from 'node:stream';
 import { hasOwnPropertyInChain, isInstanceOf } from './util';
 
+/**
+ * returns true if val is buffer
+ */
 export function isBuffer(val: unknown): val is Buffer {
   return isInstanceOf(val, Buffer);
 }
 
+/**
+ * returns true if val is stream
+ */
 export function isStream(val?: unknown): val is Stream {
   return isInstanceOf(val, Stream);
 }
 
+/**
+ * returns true if val is readable stream
+ */
 export function isReadable(val?: unknown): val is Readable {
   return isStream(val) && _isReadable(val);
 }
 
+/**
+ * returns true if val is write stream
+ */
 export function isWritable(val?: unknown): val is Writable {
   return isStream(val) && _isWritable(val);
 }
 
+/**
+ * returns true if val is duplex stream
+ */
 export function isDuplex(val?: unknown): val is Duplex {
   return isStream(val) && _isReadable(val) && _isWritable(val);
 }

@@ -3,7 +3,7 @@
 import assert from 'node:assert';
 import { is } from '../src/is';
 import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN } from '../src/types/primitive';
-import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError } from '../src/types/std';
+import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../src/types/std';
 import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../src/types/node';
 import { isLongObject } from '../src/types/external';
 
@@ -16,13 +16,11 @@ describe('is', () => {
     assert.strictEqual(is.symbol, isSymbol);
     assert.strictEqual(is.undefined, isUndefined);
     assert.strictEqual(is.null, isNull);
-    assert.strictEqual(is.nullOrUndefined, isNullable);
     assert.strictEqual(is.nullable, isNullable);
     assert.strictEqual(is.bigInt, isBigInt);
     assert.strictEqual(is.bigint, isBigInt);
-    assert.strictEqual(is.int, isInteger);
     assert.strictEqual(is.integer, isInteger);
-    assert.strictEqual(is.int32, isInteger32);
+    assert.strictEqual(is.integer32, isInteger32);
     assert.strictEqual(is.long, isLong);
     assert.strictEqual(is.double, isDouble);
     assert.strictEqual(is.finite, isFinite);
@@ -39,14 +37,14 @@ describe('is', () => {
     assert.strictEqual(is.error, isError);
     assert.strictEqual(is.regExp, isRegExp);
     assert.strictEqual(is.generator, isGenerator);
-    assert.strictEqual(is.promise, isPromiseLike);
+    assert.strictEqual(is.promise, isPromise);
     assert.strictEqual(is.promiseLike, isPromiseLike);
     assert.strictEqual(is.buffer, isBuffer);
     assert.strictEqual(is.stream, isStream);
     assert.strictEqual(is.readable, isReadable);
     assert.strictEqual(is.writable, isWritable);
     assert.strictEqual(is.duplex, isDuplex);
-    assert.strictEqual(is.Long, isLongObject);
+    assert.strictEqual(is.longObject, isLongObject);
   });
 
 });

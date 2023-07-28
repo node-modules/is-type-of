@@ -1,13 +1,13 @@
 is-type-of
 ==========
 
-complete type checking for node, extend [core-util-is](https://github.com/isaacs/core-util-is)
+Complete type checking for Node
 
-dependencies:
+## Features
 
-- [core-util-is](https://github.com/isaacs/core-util-is)
-- [is-stream](https://github.com/rvagg/isstream)
-- [is-class](https://github.com/miguelmota/is-class)
+- 🔒 Usefull Type Checking，including Primitive, Standard Object, Node Object
+- ✨ Typescript Support
+- 🚪 Typescript Type Guard Support
 
 ## Install
 
@@ -31,77 +31,234 @@ is.long(Math.pow(2, 33)); // => true
 is.double(0); // => false
 ```
 
-## API
+## API Document
 
-### From [core-util-is](https://github.com/isaacs/core-util-is)
+### Primitive
 
-#### is.array(arr)
+#### isString
 
-#### is.boolean(bool)
+Returns true if `val` is string, not `String` object.
 
-#### is.null(null)
+See Also `is.string`
 
-#### is.nullOrUndefined(null)
+#### isNumber
 
-#### is.number(num)
+Returns true if `val` is number, not `Number` object.
 
-#### is.string(str)
+See Also `is.number`
 
-#### is.symbol(sym)
+#### isBoolean
 
-#### is.undefined(undef)
+Returns true if `val` is boolean, not `Boolean` object.
 
-#### is.regExp(reg)
+See Also `is.boolean`
 
-#### is.object(obj)
+#### isBigInt
 
-#### is.date(date)
+Returns true if `val` is bigint.
 
-#### is.error(err)
+See Also `is.bigInt`
 
-#### is.function(fn)
+#### isSymbol
 
-#### is.primitive(prim)
+Returns true if `val` is symbol.
 
-#### is.buffer(buf)
+See Also `is.symbol`
 
-### from [is-stream](https://github.com/rvagg/isstream)
+#### isUndefined
 
-#### is.stream(stream)
+Returns true if `val` is undefined.
 
-#### is.readableStream(readable)
+See Also `is.undefined`
 
-#### is.writableStream(writable)
+#### isNull
 
-#### is.duplexStream(duplex)
+Returns true if `val` is null.
 
-### from [is-class](https://github.com/miguelmota/is-class)
+See Also `is.null`
 
-#### is.class(obj)
+#### isNullable
 
-### Extend API
+Returns true if `val` is null or undefined.
 
-#### is.finite(num)
+See Also `is.nullable`
 
-#### is.NaN(NaN)
+#### isPrimitive
 
-#### is.generator(gen)
+Returns true if `val` is primitive.
 
-#### is.generatorFunction(fn)
+See Also `is.primitive`
 
-#### is.promise(fn)
+#### isInteger
 
-#### is.int(int)
+Returns true if `val` is integer.
 
-#### is.double(double)
+See Also `is.integer`
 
-#### is.int32(int)
+#### isInteger32
 
-#### is.long(long)
+Returns true if `val` is integer, and between `-2 ** 31` and `2 ** 31 - 1`.
 
-#### is.Long(Long)
+See Also `is.integer32`
 
-  * Support [Long](https://github.com/dcodeIO/Long.js) instance.
+#### isLong
+
+Returns true if `val` is integer, and < `-2 ** 31`, and > `2 ** 31 - 1`.
+
+See Also `is.long`
+
+#### isSafeInteger
+
+Returns true if `val` is integer, and between `-(2 ** 53 - 1)` and `2 ** 53 - 1`.
+
+See Also `is.safeInteger`
+
+#### isDouble
+
+Returns true if `val` is Double.
+
+See Also `is.double`
+
+#### isNaN
+
+Returns true if `val` is NaN.
+
+See Also `is.NaN`
+
+#### isFinite
+
+Returns true if `val` is finite.
+
+See Also `is.finite`
+
+### Standard Object
+# API Documentation
+
+#### isArray
+
+Returns true if `val` is array, it won't check items of array.
+
+See Also `is.array`
+
+#### isFunction
+
+Returns true if `val` is function.
+
+See Also `is.function`
+
+#### isGeneratorFunction
+
+Returns true if `val` is generator function.
+
+See Also `is.generatorFunction`
+
+#### isAsyncFunction
+
+Returns true if `val` is async function.
+
+See Also `is.asyncFunction`
+
+#### isAsyncGeneratorFunction
+
+Returns true if `val` is async generator function.
+
+See Also `is.asyncGeneratorFunction`
+
+#### isObject
+
+Returns true if `val` is object.
+
+See Also `is.object`
+
+#### isClass
+
+Returns true if `val` is class. *Note:* "class" is supported in ECMAScript 6, and if the code is using some compiler or transpiler, the checking might fail.
+
+See Also `is.class`
+
+#### isRegExp
+
+Returns true if `val` is regular expression.
+
+See Also `is.regExp`
+
+#### isDate
+
+Returns true if `val` is instance of Date.
+
+See Also `is.date`
+
+#### isError
+
+Returns true if `val` is instance of Error.
+
+See Also `is.error`
+
+#### isGenerator
+
+Returns true if `val` is generator.
+
+See Also `is.generator`
+
+#### isPromise
+
+Returns true if `val` is promise.
+
+See Also `is.promise`
+
+#### isPromiseLike
+
+Returns true if `val` is like promise, if the object has `then` property, the checking will pass.
+
+See Also `is.promiseLike`
+
+### Node Object
+
+#### isBuffer
+
+Returns true if `val` is buffer.
+
+See Also `is.buffer`
+
+#### isStream
+
+Returns true if `val` is stream.
+
+See Also `is.stream`
+
+#### isReadable
+
+Returns true if `val` is readable stream.
+
+See Also `is.readable`
+
+#### isWritable
+
+Returns true if `val` is write stream.
+
+See Also `is.writable`
+
+#### isDuplex
+
+Returns true if `val` is duplex stream.
+
+See Also `is.duplex`
+
+### External Object
+
+#### isLongObject
+
+returns true if val is LongObject
+
+LongObject is from npm package [long](https://github.com/dcodeIO/long.js)
+
+See Also `is.longObject`
+
+## Thanks
+
+- [core-util-is](https://github.com/isaacs/core-util-is)
+- [is-stream](https://github.com/rvagg/isstream)
+- [is-class](https://github.com/miguelmota/is-class)
 
 ## License
 

@@ -11,7 +11,11 @@ import {
   isNullable as isNullableExpect,
   isInteger as isIntegerExpect,
   isInteger32 as isInteger32Expect,
-  isLongObject as isLongExpect,
+  isLong as isLongExpect,
+  isNaN as isNaNExpect,
+  isFinite as isFiniteExpect,
+  isSafeInteger as isSafeIntegerExpect,
+  isLongObject as isLongObjectExpect,
   isDouble as isDoubleExpect,
   isPrimitive as isPrimitiveExpect,
   isArray as isArrayExpect,
@@ -23,6 +27,7 @@ import {
   isClass as isClassExpect,
   isRegExp as isRegExpExpect,
   isDate as isDateExpect,
+  isPromise as isPromiseExpect,
   isPromiseLike as isPromiseLikeExpect,
   isGenerator as isGeneratorExpect,
   isError as isErrorExpect,
@@ -32,51 +37,51 @@ import {
   isStream as isStreamExpect,
   isWritable as isWritableExpect,
 } from '../src';
-import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN } from '../src/types/primitive';
-import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError } from '../src/types/std';
+import {
+  boolean as isBooleanCompatibleExpect,
+  number as isNumberCompatibleExpect,
+  string as isStringCompatibleExpect,
+  symbol as isSymbolCompatibleExpect,
+  undefined as isUndefinedCompatibleExpect,
+  bigInt as isBigIntCompatibleExpect,
+  null as isNullCompatibleExpect,
+  nullable as isNullableCompatibleExpect,
+  integer as isIntegerCompatibleExpect,
+  int32 as isInteger32CompatibleExpect,
+  Long as isLongObjectCompatibleExpect,
+  long as isLongCompatibleExpect,
+  double as isDoubleCompatibleExpect,
+  NaN as isNaNCompatibleExpect,
+  finite as isFiniteCompatibleExpect,
+  primitive as isPrimitiveCompatibleExpect,
+  array as isArrayCompatibleExpect,
+  function as isFunctionCompatibleExpect,
+  generatorFunction as isGeneratorFunctionCompatibleExpect,
+  asyncFunction as isAsyncFunctionCompatibleExpect,
+  asyncGeneratorFunction as isAsyncGeneratorFunctionCompatibleExpect,
+  object as isObjectCompatibleExpect,
+  class as isClassCompatibleExpect,
+  regExp as isRegExpCompatibleExpect,
+  date as isDateCompatibleExpect,
+  promise as isPromiseCompatibleExpect,
+  generator as isGeneratorCompatibleExpect,
+  error as isErrorCompatibleExpect,
+  buffer as isBufferCompatibleExpect,
+  duplex as isDuplexCompatibleExpect,
+  readable as isReadableCompatibleExpect,
+  stream as isStreamCompatibleExpect,
+  writable as isWritableCompatibleExpect,
+} from '../src';
+import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN, isSafeInteger } from '../src/types/primitive';
+import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../src/types/std';
 import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../src/types/node';
 import { isLongObject } from '../src/types/external';
+import { is as realIs } from '../src/is';
 
 describe('test/index.test.ts', () => {
 
   it('check default export', async () => {
-    assert.strictEqual(is.boolean, isBoolean);
-    assert.strictEqual(is.number, isNumber);
-    assert.strictEqual(is.string, isString);
-    assert.strictEqual(is.symbol, isSymbol);
-    assert.strictEqual(is.undefined, isUndefined);
-    assert.strictEqual(is.null, isNull);
-    assert.strictEqual(is.nullOrUndefined, isNullable);
-    assert.strictEqual(is.nullable, isNullable);
-    assert.strictEqual(is.bigInt, isBigInt);
-    assert.strictEqual(is.bigint, isBigInt);
-    assert.strictEqual(is.int, isInteger);
-    assert.strictEqual(is.integer, isInteger);
-    assert.strictEqual(is.int32, isInteger32);
-    assert.strictEqual(is.long, isLong);
-    assert.strictEqual(is.double, isDouble);
-    assert.strictEqual(is.finite, isFinite);
-    assert.strictEqual(is.NaN, isNaN);
-    assert.strictEqual(is.primitive, isPrimitive);
-    assert.strictEqual(is.function, isFunction);
-    assert.strictEqual(is.generatorFunction, isGeneratorFunction);
-    assert.strictEqual(is.asyncFunction, isAsyncFunction);
-    assert.strictEqual(is.asyncGeneratorFunction, isAsyncGeneratorFunction);
-    assert.strictEqual(is.class, isClass);
-    assert.strictEqual(is.array, isArray);
-    assert.strictEqual(is.object, isObject);
-    assert.strictEqual(is.date, isDate);
-    assert.strictEqual(is.error, isError);
-    assert.strictEqual(is.regExp, isRegExp);
-    assert.strictEqual(is.generator, isGenerator);
-    assert.strictEqual(is.promise, isPromiseLike);
-    assert.strictEqual(is.promiseLike, isPromiseLike);
-    assert.strictEqual(is.buffer, isBuffer);
-    assert.strictEqual(is.stream, isStream);
-    assert.strictEqual(is.readable, isReadable);
-    assert.strictEqual(is.writable, isWritable);
-    assert.strictEqual(is.duplex, isDuplex);
-    assert.strictEqual(is.Long, isLongObject);
+    assert.strictEqual(is, realIs);
   });
 
   it('check method', async () => {
@@ -90,8 +95,11 @@ describe('test/index.test.ts', () => {
     assert.strictEqual(isNullableExpect, isNullable);
     assert.strictEqual(isIntegerExpect, isInteger);
     assert.strictEqual(isInteger32Expect, isInteger32);
-    assert.strictEqual(isLongExpect, isLongObject);
+    assert.strictEqual(isLongExpect, isLong);
+    assert.strictEqual(isNaNExpect, isNaN);
+    assert.strictEqual(isFiniteExpect, isFinite);
     assert.strictEqual(isDoubleExpect, isDouble);
+    assert.strictEqual(isSafeIntegerExpect, isSafeInteger);
     assert.strictEqual(isPrimitiveExpect, isPrimitive);
     assert.strictEqual(isArrayExpect, isArray);
     assert.strictEqual(isFunctionExpect, isFunction);
@@ -102,6 +110,7 @@ describe('test/index.test.ts', () => {
     assert.strictEqual(isClassExpect, isClass);
     assert.strictEqual(isRegExpExpect, isRegExp);
     assert.strictEqual(isDateExpect, isDate);
+    assert.strictEqual(isPromiseExpect, isPromise);
     assert.strictEqual(isPromiseLikeExpect, isPromiseLike);
     assert.strictEqual(isGeneratorExpect, isGenerator);
     assert.strictEqual(isErrorExpect, isError);
@@ -110,6 +119,42 @@ describe('test/index.test.ts', () => {
     assert.strictEqual(isReadableExpect, isReadable);
     assert.strictEqual(isStreamExpect, isStream);
     assert.strictEqual(isWritableExpect, isWritable);
+    assert.strictEqual(isLongObjectExpect, isLongObject);
   });
 
+  it('check compatible method', async () => {
+    assert.strictEqual(isBooleanCompatibleExpect, isBoolean);
+    assert.strictEqual(isNumberCompatibleExpect, isNumber);
+    assert.strictEqual(isStringCompatibleExpect, isString);
+    assert.strictEqual(isSymbolCompatibleExpect, isSymbol);
+    assert.strictEqual(isUndefinedCompatibleExpect, isUndefined);
+    assert.strictEqual(isBigIntCompatibleExpect, isBigInt);
+    assert.strictEqual(isNullCompatibleExpect, isNull);
+    assert.strictEqual(isNullableCompatibleExpect, isNullable);
+    assert.strictEqual(isIntegerCompatibleExpect, isInteger);
+    assert.strictEqual(isInteger32CompatibleExpect, isInteger32);
+    assert.strictEqual(isLongCompatibleExpect, isLong);
+    assert.strictEqual(isLongObjectCompatibleExpect, isLongObject);
+    assert.strictEqual(isNaNCompatibleExpect, isNaN);
+    assert.strictEqual(isFiniteCompatibleExpect, isFinite);
+    assert.strictEqual(isDoubleCompatibleExpect, isDouble);
+    assert.strictEqual(isPrimitiveCompatibleExpect, isPrimitive);
+    assert.strictEqual(isArrayCompatibleExpect, isArray);
+    assert.strictEqual(isFunctionCompatibleExpect, isFunction);
+    assert.strictEqual(isGeneratorFunctionCompatibleExpect, isGeneratorFunction);
+    assert.strictEqual(isAsyncFunctionCompatibleExpect, isAsyncFunction);
+    assert.strictEqual(isAsyncGeneratorFunctionCompatibleExpect, isAsyncGeneratorFunction);
+    assert.strictEqual(isObjectCompatibleExpect, isObject);
+    assert.strictEqual(isClassCompatibleExpect, isClass);
+    assert.strictEqual(isRegExpCompatibleExpect, isRegExp);
+    assert.strictEqual(isDateCompatibleExpect, isDate);
+    assert.strictEqual(isPromiseCompatibleExpect, isPromiseLike);
+    assert.strictEqual(isGeneratorCompatibleExpect, isGenerator);
+    assert.strictEqual(isErrorCompatibleExpect, isError);
+    assert.strictEqual(isBufferCompatibleExpect, isBuffer);
+    assert.strictEqual(isDuplexCompatibleExpect, isDuplex);
+    assert.strictEqual(isReadableCompatibleExpect, isReadable);
+    assert.strictEqual(isStreamCompatibleExpect, isStream);
+    assert.strictEqual(isWritableCompatibleExpect, isWritable);
+  });
 });

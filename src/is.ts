@@ -29,6 +29,7 @@ import {
   isPromiseLike,
   isObject,
   isGenerator,
+  isPromise,
 } from './types/std';
 import {
   isBuffer,
@@ -41,48 +42,191 @@ import { isLongObject } from './types/external';
 
 export const is = {
   // Primitive
+
+  /**
+   * @see {isBoolean}
+   */
   boolean: isBoolean,
+
+  /**
+   * @see {isNumber}
+   */
   number: isNumber,
+
+  /**
+   * @see {isString}
+   */
   string: isString,
+
+  /**
+   * @see {isSymbol}
+   */
   symbol: isSymbol,
+
+  /**
+   * @see {isUndefined}
+   */
   undefined: isUndefined,
+
+  /**
+   * @see {isNull}
+   */
   null: isNull,
-  nullOrUndefined: isNullable,
+
+  /**
+   * @see {isNullable}
+   */
   nullable: isNullable,
+
+  /**
+   * @see {isBigInt}
+   */
   bigInt: isBigInt,
+
+  /**
+   * @see {isBigInt}
+   */
   bigint: isBigInt,
+
+  /**
+   * @see {isPrimitive}
+   */
   primitive: isPrimitive,
-  int: isInteger,
+
+  /**
+   * @see {isInteger}
+   */
   integer: isInteger,
-  int32: isInteger32,
+
+  /**
+   * @see {isInteger32}
+   */
+  integer32: isInteger32,
+
+  /**
+   * @see {isLong}
+   */
   long: isLong,
+
+  /**
+   * @see {isDouble}
+   */
   double: isDouble,
+
+  /**
+   * @see {isFinite}
+   */
   finite: isFinite,
+
+  /**
+   * @see {isNaN}
+   */
   NaN: isNaN,
+
+  /**
+   * @see {isSafeInteger}
+   */
   safeInteger: isSafeInteger,
 
   // Standard Object
+
+  /**
+   * @see {isFunction}
+   */
   function: isFunction,
+
+  /**
+   * @see {isGeneratorFunction}
+   */
   generatorFunction: isGeneratorFunction,
+
+  /**
+   * @see {isAsyncFunction}
+   */
   asyncFunction: isAsyncFunction,
+
+  /**
+   * @see {isAsyncGeneratorFunction}
+   */
   asyncGeneratorFunction: isAsyncGeneratorFunction,
+
+  /**
+   * @see {isClass}
+   */
   class: isClass,
+
+  /**
+   * @see {isArray}
+   */
   array: isArray,
+
+  /**
+   * @see {isObject}
+   */
   object: isObject,
+
+  /**
+   * @see {isDate}
+   */
   date: isDate,
+
+  /**
+   * @see {isError}
+   */
   error: isError,
+
+  /**
+   * @see {isRegExp}
+   */
   regExp: isRegExp,
+
+  /**
+   * @see {isGenerator}
+   */
   generator: isGenerator,
-  promise: isPromiseLike,
+
+  /**
+   * @see {isPromise}
+   */
+  promise: isPromise,
+
+  /**
+   * @see {isPromiseLike}
+   */
   promiseLike: isPromiseLike,
 
   // Node Object
+
+  /**
+   * @see {isBuffer}
+   */
   buffer: isBuffer,
+
+  /**
+   * @see {isStream}
+   */
   stream: isStream,
+
+  /**
+   * @see {isReadable}
+   */
   readable: isReadable,
+
+  /**
+   * @see {isWritable}
+   */
   writable: isWritable,
+
+  /**
+   * @see {isDuplex}
+   */
   duplex: isDuplex,
 
   // External Object
-  Long: isLongObject,
+
+  /**
+   * @see {isLongObject}
+   */
+  longObject: isLongObject,
+
 };
