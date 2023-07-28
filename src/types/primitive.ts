@@ -57,7 +57,7 @@ export function isInteger32(val?: unknown): val is number {
   return isInteger(val) && val >= -MAX_INT_31 && val <= MAX_INT_31 - 1;
 }
 
-export function isNaN(val?: unknown): val is number {
+export function isNaN(val?: unknown): boolean {
   return Number.isNaN(val);
 }
 

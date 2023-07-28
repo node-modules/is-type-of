@@ -8,8 +8,13 @@ describe('test/external.test.ts', () => {
     it('should check value', () => {
       assert.strictEqual(isLongObject(Long.fromNumber(Math.pow(2, 31))), true);
       assert.strictEqual(isLongObject(Long.fromString('1024102410241024')), true);
+      assert.strictEqual(isLongObject(Long.fromString('1024102410241024')), true);
 
       assert.strictEqual(isLongObject(123), false);
+      assert.strictEqual(isLongObject(), false);
+      assert.strictEqual(isLongObject({}), false);
+      assert.strictEqual(isLongObject({ high: 1 }), false);
+      assert.strictEqual(isLongObject({ high: '1', low: '1' }), false);
     });
 
     it('should check type', () => {

@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 import { expectNever, expectType } from 'ts-expect';
-import { isBigInt, isBoolean, isNull, isNullable, isNumber, isPrimitive, isString, isSymbol, isUndefined, isInteger, isInteger32, isNaN, isFinite, isLong, isDouble } from '../../src/types/primitive';
+import { isBigInt, isBoolean, isNull, isNullable, isNumber, isPrimitive, isString, isSymbol, isUndefined, isInteger, isInteger32, isNaN, isFinite, isLong, isDouble, isSafeInteger } from '../../src/types/primitive';
 
 describe('test/primitive.test.ts', () => {
   describe('isString', () => {
@@ -205,6 +205,7 @@ describe('test/primitive.test.ts', () => {
         assert.strictEqual(isInteger(-111110.1), false);
         assert.strictEqual(isInteger(11110.12312321), false);
         assert.strictEqual(isInteger(''), false);
+        assert.strictEqual(isInteger(), false);
       });
 
       it('should check type', () => {
@@ -233,6 +234,7 @@ describe('test/primitive.test.ts', () => {
         assert.strictEqual(isInteger32(-111110.1), false);
         assert.strictEqual(isInteger32(11110.12312321), false);
         assert.strictEqual(isInteger32('1.1'), false);
+        assert.strictEqual(isInteger32(), false);
       });
 
       it('should check type', () => {
@@ -260,13 +262,12 @@ describe('test/primitive.test.ts', () => {
         assert.strictEqual(isNaN(' '), false);
         assert.strictEqual(isNaN('NaN'), false);
         assert.strictEqual(isNaN('blabla'), false);
+        assert.strictEqual(isNaN(), false);
       });
 
       it('should check type', () => {
         const val: unknown = 1;
-        if (isNaN(val)) {
-          expectType<number>(val);
-        }
+        expectType<boolean>(isNaN(val));
       });
     });
 
@@ -287,6 +288,7 @@ describe('test/primitive.test.ts', () => {
         assert.strictEqual(isFinite(' '), false);
         assert.strictEqual(isFinite('NaN'), false);
         assert.strictEqual(isFinite('blabla'), false);
+        assert.strictEqual(isFinite(), false);
       });
 
       it('should check type', () => {
@@ -315,6 +317,7 @@ describe('test/primitive.test.ts', () => {
         assert.strictEqual(isLong(100), false);
         assert.strictEqual(isLong(Math.pow(2, 31) - 1), false);
         assert.strictEqual(isLong(-Math.pow(2, 31)), false);
+        assert.strictEqual(isLong(), false);
       });
 
       it('should check type', () => {
@@ -340,11 +343,38 @@ describe('test/primitive.test.ts', () => {
         assert.strictEqual(isDouble(-Math.pow(2, 31)), false);
         assert.strictEqual(isDouble(-Math.pow(2, 50)), false);
         assert.strictEqual(isDouble(Number.NaN), false);
+        assert.strictEqual(isDouble(), false);
       });
 
       it('should check type', () => {
         const val: unknown = 1;
         if (isDouble(val)) {
+          expectType<number>(val);
+        }
+      });
+    });
+
+    describe('isSafeInteger', () => {
+      it('should check value', () => {
+        assert.strictEqual(isSafeInteger(0), true);
+        assert.strictEqual(isSafeInteger(-100), true);
+        assert.strictEqual(isSafeInteger(100), true);
+        assert.strictEqual(isSafeInteger(Math.pow(2, 53) - 1), true);
+        assert.strictEqual(isSafeInteger(-(Math.pow(2, 53) - 1)), true);
+
+        assert.strictEqual(isSafeInteger(Math.pow(2, 53)), false);
+        assert.strictEqual(isSafeInteger(-Math.pow(2, 53)), false);
+        assert.strictEqual(isSafeInteger(0.1), false);
+        assert.strictEqual(isSafeInteger(-0.1), false);
+        assert.strictEqual(isSafeInteger(-111110.1), false);
+        assert.strictEqual(isSafeInteger(11110.12312321), false);
+        assert.strictEqual(isSafeInteger('1.1'), false);
+        assert.strictEqual(isSafeInteger(), false);
+      });
+
+      it('should check type', () => {
+        const val: unknown = 1;
+        if (isSafeInteger(val)) {
           expectType<number>(val);
         }
       });
