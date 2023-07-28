@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "prepublishOnly": "tnpm run tsc:clean && tnpm run tsc:prod",
+    "prepublishOnly": "npm run tsc:clean && npm run tsc:prod",
     "tsc": "tsc -b ./tsconfig.json",
     "tsc:prod": "tsc -b ./tsconfig.prod.json",
     "tsc:clean": "tsc -b --clean",
