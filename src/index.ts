@@ -164,6 +164,12 @@ export const regExp = is.regExp;
 
 /**
  * @deprecated
+ * @see {is.regExp}
+ */
+export const regexp = is.regExp;
+
+/**
+ * @deprecated
  * @see {is.generator}
  */
 export const generator = is.generator;

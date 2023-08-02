@@ -59,6 +59,7 @@ import {
   object as isObjectCompatibleExpect,
   class as isClassCompatibleExpect,
   regExp as isRegExpCompatibleExpect,
+  regexp as isRegexpCompatibleExpect,
   date as isDateCompatibleExpect,
   promise as isPromiseCompatibleExpect,
   generator as isGeneratorCompatibleExpect,
@@ -141,6 +142,7 @@ describe('test/index.test.ts', () => {
     assert.strictEqual(isObjectCompatibleExpect, isObject);
     assert.strictEqual(isClassCompatibleExpect, isClass);
     assert.strictEqual(isRegExpCompatibleExpect, isRegExp);
+    assert.strictEqual(isRegexpCompatibleExpect, isRegExp);
     assert.strictEqual(isDateCompatibleExpect, isDate);
     assert.strictEqual(isPromiseCompatibleExpect, isPromiseLike);
     assert.strictEqual(isGeneratorCompatibleExpect, isGenerator);
