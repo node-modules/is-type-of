@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1](https://github.com/node-modules/is-type-of/compare/v2.0.0...v2.0.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* compatible regexp ([#20](https://github.com/node-modules/is-type-of/issues/20)) ([a68e5cb](https://github.com/node-modules/is-type-of/commit/a68e5cbd23afc82a9e1d3a9cb48116bc104ca067))
+* use npm instead of tnpm ([96b5b4e](https://github.com/node-modules/is-type-of/commit/96b5b4e436b6ab33568510e8dc9dab9ce4a891a6))
+
 ## [2.0.0](https://github.com/node-modules/is-type-of/compare/v1.4.0...v2.0.0) (2023-07-28)
 
 
