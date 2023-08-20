@@ -41,5 +41,8 @@
     "long": "^3.2.0",
     "semver": "^5.4.1",
     "tsd": "^0.28.1"
+  },
+  "publishConfig": {
+    "tag": "latest-1"
   }
 }
