@@ -1,16 +1,15 @@
-'use strict';
-
 const path = require('path');
 const fs = require('fs');
 const Benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 const t = require('core-util-is');
-const is = require('..');
+const is = require('is-type-of');
+// console.log(require.resolve('is-type-of'));
 
 const nowDate = new Date();
 const nowNumber = Date.now();
 const shortString = '一点点点中文abc';
-const longString = fs.readFileSync(path.join(__dirname, '../index.js'), 'utf8');
+const longString = fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8');
 const smallBuffer = Buffer.alloc(100);
 const bigBuffer = Buffer.alloc(1024 * 1024);
 

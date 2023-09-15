@@ -1,7 +1,7 @@
-import * as Long from 'long';
 import assert from 'node:assert';
+import Long from 'long';
 import { expectType } from 'ts-expect';
-import { isLongObject } from '../../src/types/external';
+import { isLongObject } from '../../src/types/external.js';
 
 describe('test/external.test.ts', () => {
   describe('isLongObject', () => {
@@ -24,5 +24,4 @@ describe('test/external.test.ts', () => {
       }
     });
   });
-
 });

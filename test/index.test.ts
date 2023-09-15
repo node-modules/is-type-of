@@ -1,5 +1,5 @@
 import assert from 'node:assert';
-import is from '../src';
+import is from '../src/index.js';
 import {
   isBoolean as isBooleanExpect,
   isNumber as isNumberExpect,
@@ -36,7 +36,7 @@ import {
   isReadable as isReadableExpect,
   isStream as isStreamExpect,
   isWritable as isWritableExpect,
-} from '../src';
+} from '../src/index.js';
 import {
   boolean as isBooleanCompatibleExpect,
   number as isNumberCompatibleExpect,
@@ -69,12 +69,12 @@ import {
   readable as isReadableCompatibleExpect,
   stream as isStreamCompatibleExpect,
   writable as isWritableCompatibleExpect,
-} from '../src';
-import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN, isSafeInteger } from '../src/types/primitive';
-import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../src/types/std';
-import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../src/types/node';
-import { isLongObject } from '../src/types/external';
-import { is as realIs } from '../src/is';
+} from '../src/index.js';
+import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN, isSafeInteger } from '../src/types/primitive.js';
+import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../src/types/std.js';
+import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../src/types/node.js';
+import { isLongObject } from '../src/types/external.js';
+import { is as realIs } from '../src/is.js';
 
 describe('test/index.test.ts', () => {
 

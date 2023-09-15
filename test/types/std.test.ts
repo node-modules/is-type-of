@@ -1,7 +1,10 @@
 import assert from 'node:assert';
 import { expectType } from 'ts-expect';
-import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../../src/types/std';
-import { Class, isInstanceOf } from '../../src/types/util';
+import {
+  isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject,
+  isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise,
+} from '../../src/types/std.js';
+import { Class, isInstanceOf } from '../../src/types/util.js';
 
 describe('test/object.test.ts', () => {
 

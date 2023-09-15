@@ -1,6 +1,6 @@
-import { isNumber } from './primitive';
-import { isObject } from './std';
-import { hasOwnProperty } from './util';
+import { isNumber } from './primitive.js';
+import { isObject } from './std.js';
+import { hasOwnProperty } from './util.js';
 
 interface LongObject {
   high: number;

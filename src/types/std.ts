@@ -1,8 +1,8 @@
 // Javascript Standard Object
 
 import { types, debuglog } from 'node:util';
-import { hasOwnProperty, isInstanceOf } from './util';
-import type { Class } from './util';
+import { hasOwnProperty, isInstanceOf } from './util.js';
+import type { Class } from './util.js';
 
 const debug = debuglog('is-type-of:std');
 

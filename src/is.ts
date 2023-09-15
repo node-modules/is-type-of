@@ -15,7 +15,7 @@ import {
   isLong,
   isDouble,
   isSafeInteger,
-} from './types/primitive';
+} from './types/primitive.js';
 import {
   isArray,
   isFunction,
@@ -30,15 +30,15 @@ import {
   isObject,
   isGenerator,
   isPromise,
-} from './types/std';
+} from './types/std.js';
 import {
   isBuffer,
   isStream,
   isReadable,
   isWritable,
   isDuplex,
-} from './types/node';
-import { isLongObject } from './types/external';
+} from './types/node.js';
+import { isLongObject } from './types/external.js';
 
 export const is = {
   // Primitive
