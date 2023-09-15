@@ -2,7 +2,7 @@
   "name": "is-type-of",
   "version": "2.0.1",
   "description": "complete type checking for node",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/esm/index.d.ts",
   "type": "module",
   "tshy": {
     "exports": {
