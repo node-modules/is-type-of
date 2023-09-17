@@ -1,4 +1,4 @@
-import assert from 'node:assert';
+import { strict as assert } from 'node:assert';
 import { expectType } from 'ts-expect';
 import {
   isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject,
@@ -66,9 +66,15 @@ describe('test/object.test.ts', () => {
       it('should check value', () => {
         assert.strictEqual(isFunction(function() {}), true);
         assert.strictEqual(isFunction(() => {}), true);
-        assert.strictEqual(isFunction(async () => {}), true);
-        assert.strictEqual(isFunction(function* () {}), true);
-        assert.strictEqual(isFunction(async function* () {}), true);
+        assert.strictEqual(isFunction(async () => {
+          // ignore
+        }), true);
+        assert.strictEqual(isFunction(function* () {
+          // ignore
+        }), true);
+        assert.strictEqual(isFunction(async function* () {
+          // ignore
+        }), true);
 
         assert.strictEqual(isFunction(null), false);
         assert.strictEqual(isFunction({}), false);
@@ -91,7 +97,9 @@ describe('test/object.test.ts', () => {
         };
         assert.strictEqual(isGeneratorFunction(gen1), true);
 
-        const gen2 = function* () {};
+        const gen2 = function* () {
+          // ignore
+        };
         const fun = () => {};
         const obj = {};
         assert.strictEqual(isGeneratorFunction(gen2()), false);
@@ -117,7 +125,9 @@ describe('test/object.test.ts', () => {
         };
         assert.strictEqual(isAsyncFunction(asyncFun1), true);
 
-        const asyncFun2 = async function() {};
+        const asyncFun2 = async function() {
+          // ignore
+        };
         assert.strictEqual(isAsyncFunction(asyncFun2()), false);
         const fun = () => {};
         assert.strictEqual(isAsyncFunction(fun), false);
@@ -144,7 +154,9 @@ describe('test/object.test.ts', () => {
         };
         assert.strictEqual(isAsyncGeneratorFunction(asyncGenFun1), true);
 
-        const asyncFun2 = async function() {};
+        const asyncFun2 = async function() {
+          // ignore
+        };
         const fun = () => {};
         const obj = {};
         assert.strictEqual(isAsyncGeneratorFunction(asyncFun2()), false);
