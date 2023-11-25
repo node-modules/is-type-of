@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/node-modules/is-type-of/compare/v2.0.1...v2.1.0) (2023-11-25)
+
+
+### Features
+
+* use tshy to build and support ESM and CommonJS both ([#22](https://github.com/node-modules/is-type-of/issues/22)) ([3688cd6](https://github.com/node-modules/is-type-of/commit/3688cd67dbb75304016220ec4f882a56dcc8d38f))
+
 ## [2.0.1](https://github.com/node-modules/is-type-of/compare/v2.0.0...v2.0.1) (2023-08-02)
 
 
