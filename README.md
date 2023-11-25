@@ -1,17 +1,16 @@
-is-type-of
-==========
+# is-type-of
 
 Complete type checking for Node
 
 ## Features
 
-- 🔒 Usefull Type Checking，including Primitive, Standard Object, Node Object
+- 🔒 Useful Type Checking，including Primitive, Standard Object, Node Object
 - ✨ Typescript Support
 - 🚪 Typescript Type Guard Support
 
 ## Install
 
-```
+```bash
 npm install is-type-of
 ```
 
@@ -24,7 +23,7 @@ import is from 'is-type-of';
 import { isArray } from 'is-type-of';
 
 isArray([]); // => true
-is.array(); // => true
+is.array([]); // => true
 ```
 
 Compatible With
@@ -288,4 +287,4 @@ See Also `is.longObject`
 
 ## License
 
-MIT
+[MIT](LICENSE)
