@@ -3,7 +3,7 @@ import { EventEmitter } from 'node:events';
 import { Duplex, PassThrough, Readable, Stream, Transform, Writable } from 'node:stream';
 import util from 'node:util';
 import { expectType } from 'ts-expect';
-import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../../src/types/node';
+import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../../src/types/node.js';
 
 describe('test/node.test.ts', () => {
   describe('isBuffer', () => {

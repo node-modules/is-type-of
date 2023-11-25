@@ -1,12 +1,12 @@
-import { is } from './is';
-import { isNull, isUndefined, isNaN } from './types/primitive';
-import { isClass, isFunction } from './types/std';
+import { is } from './is.js';
+import { isNull, isUndefined, isNaN } from './types/primitive.js';
+import { isClass, isFunction } from './types/std.js';
 
-export * from './types/primitive';
-export * from './types/std';
-export * from './types/node';
-export * from './types/external';
-export { isInstanceOf } from './types/util';
+export * from './types/primitive.js';
+export * from './types/std.js';
+export * from './types/node.js';
+export * from './types/external.js';
+export { isInstanceOf } from './types/util.js';
 
 export default is;
 

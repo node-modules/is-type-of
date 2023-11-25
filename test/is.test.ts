@@ -1,11 +1,9 @@
-'use strict';
-
 import assert from 'node:assert';
-import { is } from '../src/is';
-import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN } from '../src/types/primitive';
-import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../src/types/std';
-import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../src/types/node';
-import { isLongObject } from '../src/types/external';
+import { is } from '../src/is.js';
+import { isBoolean, isNumber, isString, isSymbol, isUndefined, isBigInt, isNull, isNullable, isInteger, isInteger32, isLong, isDouble, isPrimitive, isFinite, isNaN } from '../src/types/primitive.js';
+import { isArray, isFunction, isGeneratorFunction, isAsyncFunction, isAsyncGeneratorFunction, isObject, isClass, isRegExp, isDate, isPromiseLike, isGenerator, isError, isPromise } from '../src/types/std.js';
+import { isBuffer, isDuplex, isReadable, isStream, isWritable } from '../src/types/node.js';
+import { isLongObject } from '../src/types/external.js';
 
 describe('is', () => {
 

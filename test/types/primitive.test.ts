@@ -1,6 +1,9 @@
 import assert from 'node:assert';
 import { expectNever, expectType } from 'ts-expect';
-import { isBigInt, isBoolean, isNull, isNullable, isNumber, isPrimitive, isString, isSymbol, isUndefined, isInteger, isInteger32, isNaN, isFinite, isLong, isDouble, isSafeInteger } from '../../src/types/primitive';
+import {
+  isBigInt, isBoolean, isNull, isNullable, isNumber, isPrimitive, isString, isSymbol,
+  isUndefined, isInteger, isInteger32, isNaN, isFinite, isLong, isDouble, isSafeInteger,
+} from '../../src/types/primitive.js';
 
 describe('test/primitive.test.ts', () => {
   describe('isString', () => {

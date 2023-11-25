@@ -1,11 +1,9 @@
-'use strict';
-
 const path = require('path');
 const fs = require('fs');
 const Benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 const t = require('core-util-is');
-const is = require('..');
+const is = require('is-type-of');
 
 const nowDate = new Date();
 const nowNumber = Date.now();

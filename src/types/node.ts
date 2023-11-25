@@ -1,6 +1,6 @@
 import { Buffer } from 'node:buffer';
 import { Duplex, Readable, Stream, Writable } from 'node:stream';
-import { hasOwnPropertyInChain, isInstanceOf } from './util';
+import { hasOwnPropertyInChain, isInstanceOf } from './util.js';
 
 /**
  * returns true if val is buffer
