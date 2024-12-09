@@ -1,5 +1,23 @@
 # is-type-of
 
+[![NPM version][npm-image]][npm-url]
+[![CI](https://github.com/node-modules/is-type-of/actions/workflows/ci.yml/badge.svg)](https://github.com/node-modules/is-type-of/actions/workflows/ci.yml)
+[![Test coverage][codecov-image]][codecov-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![npm download][download-image]][download-url]
+[![Node.js Version][node-version-image]][node-version-url]
+
+[npm-image]: https://img.shields.io/npm/v/is-type-of.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/is-type-of
+[codecov-image]: https://codecov.io/github/node-modules/is-type-of/coverage.svg?branch=master
+[codecov-url]: https://codecov.io/github/node-modules/is-type-of?branch=master
+[snyk-image]: https://snyk.io/test/npm/is-type-of/badge.svg?style=flat-square
+[snyk-url]: https://snyk.io/test/npm/is-type-of
+[download-image]: https://img.shields.io/npm/dm/is-type-of.svg?style=flat-square
+[download-url]: https://npmjs.org/package/is-type-of
+[node-version-image]: https://img.shields.io/node/v/is-type-of.svg?style=flat-square
+[node-version-url]: https://nodejs.org/en/download/
+
 Complete type checking for Node
 
 ## Features
@@ -288,3 +306,9 @@ See Also `is.longObject`
 ## License
 
 [MIT](LICENSE)
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=node-modules/is-type-of)](https://github.com/node-modules/is-type-of/graphs/contributors)
+
+Made with [contributors-img](https://contrib.rocks).
