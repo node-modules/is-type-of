@@ -6,7 +6,11 @@ export function isInstanceOf<T extends Class>(val: unknown, Clazz: T): val is In
 }
 
 export function hasOwnProperty<T extends object>(obj: T, prop: PropertyKey): obj is T & Record<typeof prop, unknown> {
-  return Object.hasOwn(obj, prop);
+  if (Object.hasOwn) {
+    // Node.js >= 16
+    return Object.hasOwn(obj, prop);
+  }
+  return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
 export function hasOwnPropertyInChain<T extends object>(obj: T, prop: PropertyKey): obj is T & Record<typeof prop, unknown> {
