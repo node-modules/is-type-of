@@ -1,6 +1,6 @@
 {
   "name": "is-type-of",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "complete type checking for node",
   "type": "module",
   "tshy": {

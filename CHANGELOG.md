@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/node-modules/is-type-of/compare/v2.1.0...v2.2.0) (2024-12-09)
+
+
+### Features
+
+* hasOwn support Node.js 14 ([#25](https://github.com/node-modules/is-type-of/issues/25)) ([857bdff](https://github.com/node-modules/is-type-of/commit/857bdff38486cc327ca93599aad5168150559eaa))
+
 ## [2.1.0](https://github.com/node-modules/is-type-of/compare/v2.0.1...v2.1.0) (2023-11-25)
 
 
